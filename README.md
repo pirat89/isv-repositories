@@ -12,3 +12,4 @@ For example, the ACME Corp. will end up with this structure for their ACME Stora
 acme/acme_storage/{actors,models}
 ```
 
+If you're interested in contributing, please read the [Contributor Guidelines](https://github.com/oamg/leapp-guidelines/blob/master/contributing-guidelines.rst)
