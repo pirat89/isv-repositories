@@ -16,7 +16,7 @@ class AcmeStorageMigrator(Actor):
     name = 'acme_storage_migrator'
     consumes = (AcmeStorageInfo,)
     produces = (Report,)
-    tags = (ApplicationsPhaseTag, IPUWorkflowTag)
+    tags = (ThirdPartyApplicationsPhaseTag, IPUWorkflowTag)
 
     def process(self):
         acme_storage_info = next(self.consume(AcmeStorageInfo),None)
@@ -38,6 +38,5 @@ class AcmeStorageMigrator(Actor):
                     title='ACME Storage on RHEL'
                 )
             ])
-
 
 
