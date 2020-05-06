@@ -15,7 +15,7 @@ class AcmeStorageScanner(Actor):
     """
 
     name = 'acme_storage_scanner'
-    consumes = (ActiveKernelModulesFacts,InstalledRPM)
+    consumes = (ActiveKernelModulesFacts, InstalledRPM)
     produces = (Report, AcmeStorageInfo)
     tags = (ChecksPhaseTag, IPUWorkflowTag)
 
@@ -56,4 +56,3 @@ class AcmeStorageScanner(Actor):
             ])
 
         self.produce(AcmeStorageInfo(has_kernel_module=has_kernel_module, has_device=has_device))
-
