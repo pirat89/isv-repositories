@@ -14,7 +14,7 @@ class AcmeStorageScanner(Actor):
 
     name = 'acme_storage_scanner'
     consumes = (ActiveKernelModulesFacts, InstalledRPM)
-    produces = (AcmeStorageInfo)
+    produces = (AcmeStorageInfo,)
     tags = (FactsPhaseTag, IPUWorkflowTag)
 
     def process(self):

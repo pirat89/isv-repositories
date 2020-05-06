@@ -1,6 +1,6 @@
 from leapp.actors import Actor
 from leapp.models import Report, AcmeStorageInfo
-from leapp.tags import ApplicationsPhaseTag, IPUWorkflowTag
+from leapp.tags import FirstBootPhaseTag, IPUWorkflowTag
 
 from leapp import reporting
 
@@ -16,7 +16,7 @@ class AcmeStorageMigrator(Actor):
     name = 'acme_storage_migrator'
     consumes = (AcmeStorageInfo,)
     produces = (Report,)
-    tags = (ThirdPartyApplicationsPhaseTag, IPUWorkflowTag)
+    tags = (FirstBootPhaseTag, IPUWorkflowTag)
 
     def process(self):
         acme_storage_info = next(self.consume(AcmeStorageInfo),None)
@@ -38,5 +38,3 @@ class AcmeStorageMigrator(Actor):
                     title='ACME Storage on RHEL'
                 )
             ])
-
-
